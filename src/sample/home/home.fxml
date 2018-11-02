@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="930.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.home.HomeController">
+    <top>
+        <Label text="欢迎使用" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="25.0" />
+            </font>
+            <BorderPane.margin>
+                <Insets bottom="12.0" top="8.0" />
+            </BorderPane.margin>
+        </Label>
+    </top>
+    <center>
+        <TabPane fx:id="homeTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab closable="false" text="首页">
+               <content>
+                  <FlowPane prefHeight="200.0" prefWidth="862.0">
+                     <children>
+                        <PieChart fx:id="pieChart" prefHeight="270.0" prefWidth="389.0" title="饼状图" />
+                        <BarChart prefHeight="285.0" prefWidth="386.0" title="条形图">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </FlowPane>
+               </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <left>
+        <TreeView fx:id="homeTree" onMouseClicked="#treeViewClick" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </left>
+</BorderPane>

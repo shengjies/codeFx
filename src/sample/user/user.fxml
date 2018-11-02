@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane  style="-fx-min-width: 100%; -fx-min-height: 100%;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.user.UserController">
+   <top>
+      <ToolBar style="-fx-min-width: 100%;" BorderPane.alignment="CENTER">
+        <items>
+          <Button fx:id="userBtnAdd" mnemonicParsing="false" onAction="#openAddUserClick" text="添 加" />
+            <Button fx:id="editBnt" mnemonicParsing="false" onAction="#openEditUser" text="修 改" />
+            <Button fx:id="delBnt" mnemonicParsing="false" onAction="#delUser" text="删 除" />
+            <Button fx:id="findBut" mnemonicParsing="false" onAction="#findUser" text="查 询" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <TableView fx:id="userTable" style="-fx-min-width: 100%;" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="92.0" text="编号">
+              <cellValueFactory>
+                  <PropertyValueFactory property="id" />
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="225.0" text="用户名称">
+              <cellValueFactory>
+                  <PropertyValueFactory property="name" />
+              </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="132.0" text="角色">
+                <cellValueFactory>
+                    <PropertyValueFactory property="role" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="134.0" text="创建时间">
+                <cellValueFactory>
+                    <PropertyValueFactory property="date" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <Pagination fx:id="userPage" pageCount="5" prefHeight="29.0" prefWidth="603.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
